@@ -1,0 +1,200 @@
+USE [master]
+GO
+
+/****** Object:  Database [OKCreditInfo]    Script Date: 11/02/2013 15:01:58 ******/
+CREATE DATABASE [OKCreditInfo] ON  PRIMARY 
+( NAME = N'OKCreditInfo', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\OKCreditInfo.mdf' , SIZE = 2048KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'OKCreditInfo_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\OKCreditInfo_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+
+ALTER DATABASE [OKCreditInfo] SET COMPATIBILITY_LEVEL = 100
+GO
+
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [OKCreditInfo].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+
+ALTER DATABASE [OKCreditInfo] SET ANSI_NULL_DEFAULT OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET ANSI_NULLS OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET ANSI_PADDING OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET ANSI_WARNINGS OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET ARITHABORT OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET AUTO_CLOSE OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET AUTO_CREATE_STATISTICS ON 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET AUTO_SHRINK OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET AUTO_UPDATE_STATISTICS ON 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET CURSOR_DEFAULT  GLOBAL 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET NUMERIC_ROUNDABORT OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET QUOTED_IDENTIFIER OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET RECURSIVE_TRIGGERS OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET  DISABLE_BROKER 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET TRUSTWORTHY OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET PARAMETERIZATION SIMPLE 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET HONOR_BROKER_PRIORITY OFF 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET  READ_WRITE 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET RECOVERY FULL 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET  MULTI_USER 
+GO
+
+ALTER DATABASE [OKCreditInfo] SET PAGE_VERIFY CHECKSUM  
+GO
+
+ALTER DATABASE [OKCreditInfo] SET DB_CHAINING OFF 
+GO
+
+USE [OKCreditInfo]
+GO
+
+/****** Object:  Table [dbo].[CustomerInformation]    Script Date: 11/02/2013 15:03:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[CustomerInformation](
+	[Account#] [nchar](10) NULL,
+	[First Name] [varchar](50) NULL,
+	[Last Name] [varchar](50) NULL,
+	[Address] [varchar](50) NULL,
+	[State] [nchar](10) NULL,
+	[ZipCode] [nchar](10) NULL,
+	[DoB] [nchar](10) NULL,
+	[Account Type] [varchar](50) NULL,
+	[Account Balance] [nchar](100) NULL,
+	[Interest] [nchar](100) NULL,
+	[Credit Limit] [nchar](100) NULL,
+	[Current Credit] [nchar](100) NULL,
+	[Payment Plan] [varchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+USE [OKCreditInfo]
+GO
+
+/****** Object:  Table [dbo].[EmployeeInformation]    Script Date: 11/02/2013 15:03:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[EmployeeInformation](
+	[First Name] [varchar](50) NULL,
+	[Last Name] [varchar](50) NULL,
+	[ID#] [nchar](10) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+USE [OKCreditInfo]
+GO
+
+/****** Object:  Table [dbo].[PaymentPlans]    Script Date: 11/02/2013 15:03:51 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PaymentPlans](
+	[Random] [nchar](10) NULL
+) ON [PRIMARY]
+
+GO
+
+USE [OKCreditInfo]
+GO
+
+/****** Object:  Table [dbo].[RandomTable]    Script Date: 11/02/2013 15:04:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[RandomTable](
+	[Random] [varchar](50) NULL,
+	[Random2] [varchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
