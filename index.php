@@ -15,7 +15,7 @@ else $_SESSION['SignedIn']=0;
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title></title>
+        <title>OK Credit Union Homepage</title>
     </head>
     <body>
         <?php
@@ -33,6 +33,28 @@ else $_SESSION['SignedIn']=0;
                 
                 echo '<a href="Calc.php">Calc</a><br>';
                 echo '<a href="Logout.php">Logout</a><br>';
+
+                echo '
+                <form name="Search" action="Search.php" method="POST">
+                <br>Search by:
+                <select name="Searchby">
+                <option value="FirstName">First Name</option>
+                <option value="LastName">Last Name</option>
+                <option value="ID">ID Number</option>
+                <option value="Address">Address</option>
+                <option value="State">State</option>
+                <option value="PrimaryPhone">Phone</option>
+                <option value="Zipcode">Zip Code</option>
+                <option value="Status">Status</option>
+                </select><br>
+                Search for: <input type="text" name="Searchfor"><br>
+                <input type="submit" value="Submit">
+                </form>';
+
+
+
+
+
             }
         ?>
 
