@@ -33,7 +33,7 @@ else $_SESSION['SignedIn']=0;
                 
                 echo '<a href="Calc.php">Calc</a><br>';
                 echo '<a href="Logout.php">Logout</a><br>';
-
+                if($_SESSION['AdminState']==1){echo '<a href="AdminPanel.php">AdminPanel</a><br>';}
                 echo '
                 <form name="Search" action="Search.php" method="POST">
                 <br>Search by:

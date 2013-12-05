@@ -50,29 +50,30 @@ echo '</td></tr>';
 }
 echo '</table>';
 
-echo '<form action ="PlaceHolder.php" method ="POST">
+echo 'New Account';
+echo '<form action ="CreditCreate.php" method ="POST">
 <input type ="hidden" name="FirstName" value="';
-echo $db_field['FirstName'];
+echo mysql_real_escape_string($_POST['FirstName']);
 echo '" />';
 echo '<input type ="hidden" name="LastName" value="';
-echo $db_field['LastName'];
+echo mysql_real_escape_string($_POST['LastName']);
 echo '" />';
 echo '<input type ="hidden" name="CustomerID" value="';
-echo $db_field['CustomerID'];
+echo mysql_real_escape_string($_POST['CustomerID']);
 echo '" />';
-echo '<input type ="submit" value="Credit" />';
+echo '<input type ="submit" value="Credit" /></form>';
 
-echo '<form action ="PlaceHolder.php" method ="POST">
+echo '<form action ="DebitCreate.php" method ="POST">
 <input type ="hidden" name="FirstName" value="';
-echo $db_field['FirstName'];
+echo $_POST['FirstName'];
 echo '" />';
 echo '<input type ="hidden" name="LastName" value="';
-echo $db_field['LastName'];
+echo $_POST['LastName'];
 echo '" />';
 echo '<input type ="hidden" name="CustomerID" value="';
-echo $db_field['CustomerID'];
+echo $_POST['CustomerID'];
 echo '" />';
-echo '<input type ="submit" value="Debit" />';
+echo '<input type ="submit" value="Debit" /></form>';
 }
 ?>
 
@@ -84,7 +85,7 @@ echo '<input type ="submit" value="Debit" />';
     </head>
     <body>
         
-
+        <a href="index.php">Home</a>
 
 
 

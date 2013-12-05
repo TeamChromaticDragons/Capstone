@@ -71,7 +71,7 @@ echo '" />';
 echo '<input type ="hidden" name="CustomerID" value="';
 echo $db_field['CustomerID'];
 echo '" />';
-echo '<input type ="submit" value="Display" />';
+echo '<input type ="submit" value="Display" /></form>';
 echo '</td></tr>';
 }
 echo '</table>';
@@ -85,6 +85,6 @@ echo '</table>';
         <title>OK Credit Union</title>
     </head>
     <body>
-        
+        <a href="index.php">Home</a>
     </body>
 </html>
